@@ -1,0 +1,14 @@
+1. Create Device Form :
+
+Device name,
+Owner,
+Notification,
+Authorization,
+Purchase Assisten,
+Pay By,
+
+Save
+
+
+2. Device Managment List button ADD on top
+3. Each device has remove, update buttons

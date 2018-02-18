@@ -1,0 +1,14 @@
+--emmet ---
+it's for html by TAB button you can creat tags like 
+1. li*2  will do 
+  <li></li>
+  <li></li>
+  #test_id =>(TAB) <div id="test_id"></div>
+  ._class =>(TAB) <div class="_class"></div>
+()group
+>nested
+#id
+.class
++subliming
+{}value of tag
+[]atributes
