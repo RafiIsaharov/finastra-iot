@@ -1,47 +1,20 @@
 <div>
   <app-page-header [heading]="'List of Devices'" [icon]="'fa-list-ol'"></app-page-header>
+  <!-- <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']"><i class="fa fa-plus fw"> ADD NEW</i></a> -->
+   
   <app-collapse></app-collapse>
   <div class="row">
       <div class="col-lg-12">
           <div class="card mb-3">
                <div class="card-header">The List</div> 
               <div class="card-body">
-                 <table>
-                   <thead>
-                     <tr>
-                       <th>Header1</th>
-                       <th>Header2</th>
-                       <th>Header3</th>
-                       <th>Header4</th>
-                       <th>Action</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <td>body1</td>
-                       <td>body2</td>
-                       <td>body3</td>
-                       <td>body4</td>
-                       <td><a href="">Show Detail</a></td>
-                     </tr>
-                     <tr>
-                        <td>body1</td>
-                        <td>body2</td>
-                        <td>body3</td>
-                        <td>body4</td>
-                        <td><a href="">Show Detail</a></td>
-                      </tr>
-                      <tr>
-                          <td>body1</td>
-                          <td>body2</td>
-                          <td>body3</td>
-                          <td>body4</td>
-                          <td><a href="">Show Detail</a></td>
-                        </tr>
-                   </tbody>
-                 </table> 
-
-                  
+                 <ul class="list-group">
+                   <li  class="list-group-item" *ngFor = "let device of devices; index as i">
+                     {{i+1}} - {{device.name}}
+                     <button class="btn" (click)="onRemove(device)">Remvoe</button> 
+                     <a class="btn btn-default" [routerLink]="['/device-details', device.id]">Show Detail</a>
+                   </li>
+                 </ul>
               </div>
           </div>
       </div>

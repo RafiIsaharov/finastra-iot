@@ -9,6 +9,13 @@ import { routerTransition } from '../../router.animations';
 })
 export class DevicesComponent implements OnInit {
 
+  devices  = [
+    { id: 1,  name: 'device name 1'},
+    { id: 2,  name: 'device name 2'},
+    { id: 3,  name: 'device name 3'},
+    { id: 4,  name: 'device name 4'}
+  ];
+
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +28,8 @@ export class DevicesComponent implements OnInit {
       //this.http.get('/device').subscribe(data=>{
       //  this.devices=data;
       //});}
-
+onRemove(device){
+  let index = this.devices.indexOf(device);
+  this.devices.splice(index,1);
+}
 }

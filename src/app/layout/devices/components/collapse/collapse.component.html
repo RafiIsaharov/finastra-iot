@@ -6,13 +6,47 @@
                 <p>
                     <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
                         [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-                        <i class="fa fa-plus fw"> ADD NEW</i>
+                        <i class="fa fa-plus fw"> Add New Device</i>
                     </button>
                 </p>
                 <div id="collapseExample" [ngbCollapse]="isCollapsed">
                     <div class="card">
                         <div class="card-body">
-                            You can collapse this card by clicking Toggle
+                            <form>
+                                <div class="form-group">
+                                  <label for="name">Device name</label>
+                                  <input type="text" class="form-control" id="deviceNameId" [(ngModel)]="deviceName" name="DeviceName" required>
+                                </div>
+                          
+                                <div class="form-group">
+                                  <label for="Notification">Owner</label>
+                                  <input type="text" class="form-control" id="Owner" [(ngModel)]="deviceOwner" name="DeviceOwner">
+                                </div>
+                          
+                                <div class="form-group">
+                                    <label for="Authorization">Notification</label>
+                                    <input type="text" class="form-control" id="Not" [(ngModel)]="notification" name="Notification">
+                          
+                                </div>
+                          
+                                <div class="form-group">
+                                    <label for="Authorization">Authorization</label>
+                                    <input type="text" class="form-control" id="Auth">
+                                </div>
+                          
+                                 <div class="form-group">
+                                      <label for="PurchaseAssistant">Purchase Assistant</label>
+                                      <input type="text" class="form-control" id="Purchase">
+                                 </div>
+                          
+                                  <div class="form-group">
+                                        <label for="PayBy">Pay By</label>
+                                        <input type="text" class="form-control" id="alterEgo">
+                                  </div>
+                          
+                                <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+                          
+                              </form> 
                         </div>
                     </div>
                 </div>
