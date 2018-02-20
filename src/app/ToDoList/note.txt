@@ -12,3 +12,6 @@ Save
 
 2. Device Managment List button ADD on top
 3. Each device has remove, update buttons
+
+Services :
+https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service
