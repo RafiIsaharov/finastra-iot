@@ -11,7 +11,7 @@
                  <ul class="list-group">
                    <li  class="list-group-item" *ngFor = "let device of devices; index as i">
                      {{i+1}} - {{device.name}}
-                     <button class="btn" (click)="onRemove(device)">Remvoe</button> 
+                     <button class="btn" (click)="onRemoveDevice(device)">Remvoe</button> 
                      <a class="btn btn-default" [routerLink]="['/device-details', device.id]">Show Detail</a>
                    </li>
                  </ul>
