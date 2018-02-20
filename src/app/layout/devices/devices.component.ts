@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { DevicesService } from '../../shared/services/devices.service';
 
 @Component({
   selector: 'devices',
@@ -9,25 +10,17 @@ import { routerTransition } from '../../router.animations';
 })
 export class DevicesComponent implements OnInit {
 
-  devices  = [
-    { id: 1,  name: 'device name 1'},
-    { id: 2,  name: 'device name 2'},
-    { id: 3,  name: 'device name 3'},
-    { id: 4,  name: 'device name 4'}
-  ];
+  devices:any;
 
-  constructor() { }
+  constructor(private _deviceService: DevicesService) { }
 
   ngOnInit() {
-  }
-  //devices: any;
-  
-    //constructor(private http: HttpClient) { }
-  
-    //ngOnInit() {
-      //this.http.get('/device').subscribe(data=>{
-      //  this.devices=data;
-      //});}
+    this._deviceService.getDevices().subscribe(
+      data => { this.devices = data},
+      err => console.error(err),
+      () => console.log('done loading devices')
+       );
+  }  
 onRemove(device){
   let index = this.devices.indexOf(device);
   this.devices.splice(index,1);
